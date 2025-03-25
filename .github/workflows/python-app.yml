@@ -2,6 +2,11 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
 name: Python application
+
+on:
+  schedule:
+    - cron: "30 7 * * 1-5" # 台灣時間每週一到五下午3:30
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
