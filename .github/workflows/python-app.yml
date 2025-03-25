@@ -4,8 +4,7 @@
 name: Python application
 
 on:
-  schedule:
-    - cron: "30 7 * * 1-5" # 台灣時間每週一到五下午3:30
+  workflow_dispatch:  # 僅手動觸發
 
 jobs:
   run-script:
@@ -27,5 +26,13 @@ jobs:
 
       - name: Run main.py
         run: |
-          ls -la  # 這行可讓你確認當前目錄檔案
+          ls -la
           python ./main.py
+
+      - name: Commit and push data
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "dog4891072@gmail.com"
+          git add data/
+          git commit -m "Manual update: $(date '+%Y-%m-%d')" || echo "No changes"
+          git push
