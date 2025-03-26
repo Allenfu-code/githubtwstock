@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>股票資料</title>
+</head>
+<body>
+  <h2>股票 CSV 資料預覽</h2>
+  <select id="stock-selector">
+    <option value="2330">2330</option>
+    <option value="0050">0050</option>
+    <!-- 自己增加其他股票代號 -->
+  </select>
+  <button onclick="loadCSV()">載入資料</button>
+  
+  <table border="1" id="csvTable">
+    <thead id="table-head"></thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <script src="scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</body>
+</html>
