@@ -6,3 +6,4 @@ res = requests.get(
 # res = requests.get("你的目標網址")
 with open("debug.html", "w", encoding='utf-8') as f:
     f.write(res.text)
+print(res.text)
