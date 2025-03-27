@@ -43,7 +43,6 @@ def pyramid(sid):
 output_dir = 'data'
 os.makedirs(output_dir, exist_ok=True)
 output_file = os.path.join(output_dir, 'companybigpeople.csv')
-
 if os.path.exists(output_file):
     existing_df = pd.read_csv(output_file, encoding='utf-8-sig', parse_dates=['Time'])
 else:
